@@ -1,0 +1,299 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		559E46F11370F6E400FEC4E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559E46F01370F6E400FEC4E5 /* UIKit.framework */; };
+		559E46F31370F6E400FEC4E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559E46F21370F6E400FEC4E5 /* Foundation.framework */; };
+		559E46F51370F6E400FEC4E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559E46F41370F6E400FEC4E5 /* CoreGraphics.framework */; };
+		559E46FB1370F6E400FEC4E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 559E46F91370F6E400FEC4E5 /* InfoPlist.strings */; };
+		559E46FE1370F6E400FEC4E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 559E46FD1370F6E400FEC4E5 /* main.m */; };
+		559E47011370F6E400FEC4E5 /* DynamicStorageAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 559E47001370F6E400FEC4E5 /* DynamicStorageAppDelegate.m */; };
+		559E47041370F6E400FEC4E5 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559E47021370F6E400FEC4E5 /* MainWindow.xib */; };
+		559E47071370F6E400FEC4E5 /* DynamicStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 559E47061370F6E400FEC4E5 /* DynamicStorageViewController.m */; };
+		559E470A1370F6E400FEC4E5 /* DynamicStorageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559E47081370F6E400FEC4E5 /* DynamicStorageViewController.xib */; };
+		559E47121370F70800FEC4E5 /* DDDynamicStorageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 559E47111370F70800FEC4E5 /* DDDynamicStorageObject.m */; };
+		559E47151370F7A900FEC4E5 /* SimpleStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 559E47141370F7A900FEC4E5 /* SimpleStorage.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		559E46EC1370F6E400FEC4E5 /* DynamicStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		559E46F01370F6E400FEC4E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		559E46F21370F6E400FEC4E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		559E46F41370F6E400FEC4E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		559E46F81370F6E400FEC4E5 /* DynamicStorage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicStorage-Info.plist"; sourceTree = "<group>"; };
+		559E46FA1370F6E400FEC4E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		559E46FC1370F6E400FEC4E5 /* DynamicStorage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DynamicStorage-Prefix.pch"; sourceTree = "<group>"; };
+		559E46FD1370F6E400FEC4E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		559E46FF1370F6E400FEC4E5 /* DynamicStorageAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicStorageAppDelegate.h; sourceTree = "<group>"; };
+		559E47001370F6E400FEC4E5 /* DynamicStorageAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicStorageAppDelegate.m; sourceTree = "<group>"; };
+		559E47031370F6E400FEC4E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		559E47051370F6E400FEC4E5 /* DynamicStorageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicStorageViewController.h; sourceTree = "<group>"; };
+		559E47061370F6E400FEC4E5 /* DynamicStorageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicStorageViewController.m; sourceTree = "<group>"; };
+		559E47091370F6E400FEC4E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DynamicStorageViewController.xib; sourceTree = "<group>"; };
+		559E47101370F70800FEC4E5 /* DDDynamicStorageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDynamicStorageObject.h; sourceTree = "<group>"; };
+		559E47111370F70800FEC4E5 /* DDDynamicStorageObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDynamicStorageObject.m; sourceTree = "<group>"; };
+		559E47131370F7A900FEC4E5 /* SimpleStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleStorage.h; sourceTree = "<group>"; };
+		559E47141370F7A900FEC4E5 /* SimpleStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleStorage.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		559E46E91370F6E400FEC4E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559E46F11370F6E400FEC4E5 /* UIKit.framework in Frameworks */,
+				559E46F31370F6E400FEC4E5 /* Foundation.framework in Frameworks */,
+				559E46F51370F6E400FEC4E5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		559E46E11370F6E400FEC4E5 = {
+			isa = PBXGroup;
+			children = (
+				559E46F61370F6E400FEC4E5 /* DynamicStorage */,
+				559E46EF1370F6E400FEC4E5 /* Frameworks */,
+				559E46ED1370F6E400FEC4E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		559E46ED1370F6E400FEC4E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				559E46EC1370F6E400FEC4E5 /* DynamicStorage.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		559E46EF1370F6E400FEC4E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				559E46F01370F6E400FEC4E5 /* UIKit.framework */,
+				559E46F21370F6E400FEC4E5 /* Foundation.framework */,
+				559E46F41370F6E400FEC4E5 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		559E46F61370F6E400FEC4E5 /* DynamicStorage */ = {
+			isa = PBXGroup;
+			children = (
+				559E46FF1370F6E400FEC4E5 /* DynamicStorageAppDelegate.h */,
+				559E47001370F6E400FEC4E5 /* DynamicStorageAppDelegate.m */,
+				559E47021370F6E400FEC4E5 /* MainWindow.xib */,
+				559E47051370F6E400FEC4E5 /* DynamicStorageViewController.h */,
+				559E47061370F6E400FEC4E5 /* DynamicStorageViewController.m */,
+				559E47081370F6E400FEC4E5 /* DynamicStorageViewController.xib */,
+				559E47101370F70800FEC4E5 /* DDDynamicStorageObject.h */,
+				559E47111370F70800FEC4E5 /* DDDynamicStorageObject.m */,
+				559E47131370F7A900FEC4E5 /* SimpleStorage.h */,
+				559E47141370F7A900FEC4E5 /* SimpleStorage.m */,
+				559E46F71370F6E400FEC4E5 /* Supporting Files */,
+			);
+			path = DynamicStorage;
+			sourceTree = "<group>";
+		};
+		559E46F71370F6E400FEC4E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				559E46F81370F6E400FEC4E5 /* DynamicStorage-Info.plist */,
+				559E46F91370F6E400FEC4E5 /* InfoPlist.strings */,
+				559E46FC1370F6E400FEC4E5 /* DynamicStorage-Prefix.pch */,
+				559E46FD1370F6E400FEC4E5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		559E46EB1370F6E400FEC4E5 /* DynamicStorage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559E470D1370F6E400FEC4E5 /* Build configuration list for PBXNativeTarget "DynamicStorage" */;
+			buildPhases = (
+				559E46E81370F6E400FEC4E5 /* Sources */,
+				559E46E91370F6E400FEC4E5 /* Frameworks */,
+				559E46EA1370F6E400FEC4E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicStorage;
+			productName = DynamicStorage;
+			productReference = 559E46EC1370F6E400FEC4E5 /* DynamicStorage.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		559E46E31370F6E400FEC4E5 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 559E46E61370F6E400FEC4E5 /* Build configuration list for PBXProject "DynamicStorage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 559E46E11370F6E400FEC4E5;
+			productRefGroup = 559E46ED1370F6E400FEC4E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				559E46EB1370F6E400FEC4E5 /* DynamicStorage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		559E46EA1370F6E400FEC4E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559E46FB1370F6E400FEC4E5 /* InfoPlist.strings in Resources */,
+				559E47041370F6E400FEC4E5 /* MainWindow.xib in Resources */,
+				559E470A1370F6E400FEC4E5 /* DynamicStorageViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		559E46E81370F6E400FEC4E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559E46FE1370F6E400FEC4E5 /* main.m in Sources */,
+				559E47011370F6E400FEC4E5 /* DynamicStorageAppDelegate.m in Sources */,
+				559E47071370F6E400FEC4E5 /* DynamicStorageViewController.m in Sources */,
+				559E47121370F70800FEC4E5 /* DDDynamicStorageObject.m in Sources */,
+				559E47151370F7A900FEC4E5 /* SimpleStorage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		559E46F91370F6E400FEC4E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				559E46FA1370F6E400FEC4E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		559E47021370F6E400FEC4E5 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				559E47031370F6E400FEC4E5 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		559E47081370F6E400FEC4E5 /* DynamicStorageViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				559E47091370F6E400FEC4E5 /* en */,
+			);
+			name = DynamicStorageViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		559E470B1370F6E400FEC4E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		559E470C1370F6E400FEC4E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		559E470E1370F6E400FEC4E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicStorage/DynamicStorage-Prefix.pch";
+				INFOPLIST_FILE = "DynamicStorage/DynamicStorage-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		559E470F1370F6E400FEC4E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DynamicStorage/DynamicStorage-Prefix.pch";
+				INFOPLIST_FILE = "DynamicStorage/DynamicStorage-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		559E46E61370F6E400FEC4E5 /* Build configuration list for PBXProject "DynamicStorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559E470B1370F6E400FEC4E5 /* Debug */,
+				559E470C1370F6E400FEC4E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		559E470D1370F6E400FEC4E5 /* Build configuration list for PBXNativeTarget "DynamicStorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559E470E1370F6E400FEC4E5 /* Debug */,
+				559E470F1370F6E400FEC4E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 559E46E31370F6E400FEC4E5 /* Project object */;
+}
