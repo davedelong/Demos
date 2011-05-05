@@ -9,6 +9,8 @@
 #import "DDDynamicStorageObject.h"
 #import <objc/runtime.h>
 
+static char valueKey = 1;
+
 @implementation DDDynamicStorageObject
 
 - (id)init {
@@ -26,7 +28,16 @@
     return _storage;
 }
 - (void)_printStorage {
-    NSLog(@"%@", _storage);
+    NSMutableDictionary *tmpStorage = [NSMutableDictionary dictionaryWithCapacity:[_storage count]];
+    for (NSString *propertyName in _storage) {
+        NSObject *objectHolder = [_storage objectForKey:propertyName];
+        id propertyValue = objc_getAssociatedObject(objectHolder, &valueKey);
+        if (propertyValue == nil) {
+            propertyValue = [NSNull null];
+        }
+        [tmpStorage setObject:propertyValue forKey:propertyName];
+    }
+    NSLog(@"%@", tmpStorage);
 }
 
 + (BOOL)resolveInstanceMethod:(SEL)sel {
@@ -118,8 +129,6 @@
     if (setterName == nil) {
         setterName = [NSString stringWithFormat:@"set%c%s:", toupper(rawPropertyName[0]), (rawPropertyName+1)];
     }
-    
-    static char valueKey = 1;
     
     id(^getterBlock)(id) = ^id(id _s) {
         NSObject *v = [[_s storage] objectForKey:propertyName];
