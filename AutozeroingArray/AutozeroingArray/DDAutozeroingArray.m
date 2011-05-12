@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 
 static char DDAutozeroingObserverKey = 1;
-NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDidDeallocateNotification";
+static NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDidDeallocateNotification";
 
 //this is an object that gets attached to an object in an AutozeroingArray
 //when the attachee is deallocated/finalized, the associated objects are also cleaned up
@@ -19,50 +19,32 @@ NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDi
 //the object pointer (now stale) is posted in the notification, wrapped in an NSValue
 @interface DDAutozeroingArrayDeallocationObserver : NSObject {
 @private
-    __weak id object;
+    NSValue *objectWrapper;
 }
+@property (readonly) NSValue *objectWrapper;
 - (id)initWithObject:(id)anObject;
 @end
 
 @implementation DDAutozeroingArrayDeallocationObserver
+@synthesize objectWrapper;
 
 - (id)initWithObject:(id)anObject {
     self = [super init];
     if (self) {
-        object = anObject;
+        objectWrapper = [[NSValue valueWithNonretainedObject:anObject] retain];
     }
     return self;
 }
 
 - (void)finalize {
-    [[NSNotificationCenter defaultCenter] postNotificationName:DDAutozeroingObjectDidDeallocateNotification object:[NSValue valueWithNonretainedObject:object] userInfo:nil];
-    object = nil;
+    [[NSNotificationCenter defaultCenter] postNotificationName:DDAutozeroingObjectDidDeallocateNotification object:self userInfo:nil];
     [super finalize];
 }
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] postNotificationName:DDAutozeroingObjectDidDeallocateNotification object:[NSValue valueWithNonretainedObject:object] userInfo:nil];
-    object = nil;
+    [[NSNotificationCenter defaultCenter] postNotificationName:DDAutozeroingObjectDidDeallocateNotification object:self userInfo:nil];
+    [objectWrapper release];
     [super dealloc];
-}
-
-@end
-
-@interface NSObject (DDAutozeroingArray)
-
-- (void)requestDeallocationNotification;
-
-@end
-
-@implementation NSObject (DDAutozeroingArray)
-
-- (void)requestDeallocationNotification {
-    id observer = objc_getAssociatedObject(self, &DDAutozeroingObserverKey);
-    if (observer == nil) {
-        observer = [[DDAutozeroingArrayDeallocationObserver alloc] initWithObject:self];
-        objc_setAssociatedObject(self, &DDAutozeroingObserverKey, observer, OBJC_ASSOCIATION_RETAIN);
-        [observer release];
-    }
 }
 
 @end
@@ -72,7 +54,6 @@ NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDi
 - (id)initWithObjects:(const id *)objects count:(NSUInteger)cnt {
     self = [self init];
     if (self) {
-        
         CFArrayCallBacks callbacks = kCFTypeArrayCallBacks;
         callbacks.retain = NULL;
         callbacks.release = NULL;
@@ -82,11 +63,11 @@ NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDi
             id object = objects[i];
             [self addObject:object];
         }
-    
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(objectDeallocated:) name:DDAutozeroingObjectDidDeallocateNotification object:nil];
     }
     return self;
 }
+
+#pragma mark Memory Management
 
 - (void)finalize {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -99,11 +80,34 @@ NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDi
     [super dealloc];
 }
 
+#pragma mark Autozeroing
+
+- (void)observeObject:(id)anObject {
+    id observer = objc_getAssociatedObject(anObject, &DDAutozeroingObserverKey);
+    if (observer == nil) {
+        observer = [[DDAutozeroingArrayDeallocationObserver alloc] initWithObject:anObject];
+        objc_setAssociatedObject(anObject, &DDAutozeroingObserverKey, observer, OBJC_ASSOCIATION_RETAIN);
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self 
+                                                 selector:@selector(objectDeallocated:) 
+                                                     name:DDAutozeroingObjectDidDeallocateNotification 
+                                                   object:observer];
+        [observer release];
+    }
+    
+}
+
+- (void)stopObservingObject:(id)anObject {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:DDAutozeroingObjectDidDeallocateNotification object:anObject];
+}
+
 - (void)objectDeallocated:(NSNotification *)note {
-    NSValue *wrapper = [note object];
+    NSValue *wrapper = [[note object] objectWrapper];
     id pointer = [wrapper nonretainedObjectValue];
     [storage removeObject:pointer];
 }
+
+#pragma mark NS(Mutable)Array overrides
 
 - (NSUInteger)count {
     return [storage count];
@@ -114,31 +118,28 @@ NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDi
 }
 
 - (void)insertObject:(id)anObject atIndex:(NSUInteger)index {
-    if ([anObject respondsToSelector:@selector(requestDeallocationNotification)]) {
-        [anObject requestDeallocationNotification];
-    }
+    [self observeObject:anObject];
     [storage insertObject:anObject atIndex:index];
 }
 
 - (void)removeObjectAtIndex:(NSUInteger)index {
+    [self stopObservingObject:[self objectAtIndex:index]];
     [storage removeObjectAtIndex:index];
 }
 
 - (void)addObject:(id)anObject {
-    if ([anObject respondsToSelector:@selector(requestDeallocationNotification)]) {
-        [anObject requestDeallocationNotification];
-    }
+    [self observeObject:anObject];
     [storage addObject:anObject];
 }
 
 - (void)removeLastObject {
+    [self stopObservingObject:[self lastObject]];
     [storage removeLastObject];
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject {
-    if ([anObject respondsToSelector:@selector(requestDeallocationNotification)]) {
-        [anObject requestDeallocationNotification];
-    }
+    [self stopObservingObject:[self objectAtIndex:index]];
+    [self observeObject:anObject];
     [storage replaceObjectAtIndex:index withObject:anObject];
 }
 
