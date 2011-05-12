@@ -2,6 +2,10 @@
 
 Some demos showing various concepts relating to Objective-C and Cocoa.
 
+## AutozeroingArray
+
+An `NSMutableArray` subclass that maintains auto-zeroing weak references to its items.  Should work on both iOS and Mac OS X, regardless of GC mode.
+
 ## DDURLBuilder
 
 `DDURLBuilder` is essentially a mutable `NSURL`.  You can use it to customize the host, path, query, fragment, username, password, etc of an `NSURL`.

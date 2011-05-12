@@ -1,0 +1,230 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		552C9CC0137B8FBE00105712 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552C9CBF137B8FBE00105712 /* Foundation.framework */; };
+		552C9CC3137B8FBE00105712 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 552C9CC2137B8FBE00105712 /* main.m */; };
+		552C9CCE137B8FD400105712 /* DDAutozeroingArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 552C9CCD137B8FD400105712 /* DDAutozeroingArray.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		552C9CB9137B8FBE00105712 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		552C9CBB137B8FBE00105712 /* AutozeroingArray */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AutozeroingArray; sourceTree = BUILT_PRODUCTS_DIR; };
+		552C9CBF137B8FBE00105712 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		552C9CC2137B8FBE00105712 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		552C9CC5137B8FBE00105712 /* AutozeroingArray-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutozeroingArray-Prefix.pch"; sourceTree = "<group>"; };
+		552C9CC6137B8FBE00105712 /* AutozeroingArray.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AutozeroingArray.1; sourceTree = "<group>"; };
+		552C9CCC137B8FD400105712 /* DDAutozeroingArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAutozeroingArray.h; sourceTree = "<group>"; };
+		552C9CCD137B8FD400105712 /* DDAutozeroingArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAutozeroingArray.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		552C9CB8137B8FBE00105712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552C9CC0137B8FBE00105712 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		552C9CB0137B8FBE00105712 = {
+			isa = PBXGroup;
+			children = (
+				552C9CC1137B8FBE00105712 /* AutozeroingArray */,
+				552C9CBE137B8FBE00105712 /* Frameworks */,
+				552C9CBC137B8FBE00105712 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		552C9CBC137B8FBE00105712 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				552C9CBB137B8FBE00105712 /* AutozeroingArray */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		552C9CBE137B8FBE00105712 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				552C9CBF137B8FBE00105712 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		552C9CC1137B8FBE00105712 /* AutozeroingArray */ = {
+			isa = PBXGroup;
+			children = (
+				552C9CC2137B8FBE00105712 /* main.m */,
+				552C9CCC137B8FD400105712 /* DDAutozeroingArray.h */,
+				552C9CCD137B8FD400105712 /* DDAutozeroingArray.m */,
+				552C9CC6137B8FBE00105712 /* AutozeroingArray.1 */,
+				552C9CC4137B8FBE00105712 /* Supporting Files */,
+			);
+			path = AutozeroingArray;
+			sourceTree = "<group>";
+		};
+		552C9CC4137B8FBE00105712 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				552C9CC5137B8FBE00105712 /* AutozeroingArray-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		552C9CBA137B8FBE00105712 /* AutozeroingArray */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 552C9CC9137B8FBE00105712 /* Build configuration list for PBXNativeTarget "AutozeroingArray" */;
+			buildPhases = (
+				552C9CB7137B8FBE00105712 /* Sources */,
+				552C9CB8137B8FBE00105712 /* Frameworks */,
+				552C9CB9137B8FBE00105712 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutozeroingArray;
+			productName = AutozeroingArray;
+			productReference = 552C9CBB137B8FBE00105712 /* AutozeroingArray */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		552C9CB2137B8FBE00105712 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 552C9CB5137B8FBE00105712 /* Build configuration list for PBXProject "AutozeroingArray" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 552C9CB0137B8FBE00105712;
+			productRefGroup = 552C9CBC137B8FBE00105712 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				552C9CBA137B8FBE00105712 /* AutozeroingArray */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		552C9CB7137B8FBE00105712 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552C9CC3137B8FBE00105712 /* main.m in Sources */,
+				552C9CCE137B8FD400105712 /* DDAutozeroingArray.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		552C9CC7137B8FBE00105712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		552C9CC8137B8FBE00105712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		552C9CCA137B8FBE00105712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutozeroingArray/AutozeroingArray-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		552C9CCB137B8FBE00105712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutozeroingArray/AutozeroingArray-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		552C9CB5137B8FBE00105712 /* Build configuration list for PBXProject "AutozeroingArray" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552C9CC7137B8FBE00105712 /* Debug */,
+				552C9CC8137B8FBE00105712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		552C9CC9137B8FBE00105712 /* Build configuration list for PBXNativeTarget "AutozeroingArray" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552C9CCA137B8FBE00105712 /* Debug */,
+				552C9CCB137B8FBE00105712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 552C9CB2137B8FBE00105712 /* Project object */;
+}
