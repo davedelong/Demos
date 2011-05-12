@@ -13,8 +13,8 @@ static char DDAutozeroingObserverKey = 1;
 NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDidDeallocateNotification";
 
 //this is an object that gets attached to an object in an AutozeroingArray
-//when the attachee is deallocate, the associated objects are also cleaned up
-//this causes the DeallocationObserver to be released (and deallocated)
+//when the attachee is deallocated/finalized, the associated objects are also cleaned up
+//this causes the DeallocationObserver to be released (and deallocated/finalized)
 //and when that happens, it posts an "object did deallocate" notification
 //the object pointer (now stale) is posted in the notification, wrapped in an NSValue
 @interface DDAutozeroingArrayDeallocationObserver : NSObject {
@@ -32,6 +32,12 @@ NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDi
         object = anObject;
     }
     return self;
+}
+
+- (void)finalize {
+    [[NSNotificationCenter defaultCenter] postNotificationName:DDAutozeroingObjectDidDeallocateNotification object:[NSValue valueWithNonretainedObject:object] userInfo:nil];
+    object = nil;
+    [super finalize];
 }
 
 - (void)dealloc {
@@ -80,6 +86,11 @@ NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingObjectDi
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(objectDeallocated:) name:DDAutozeroingObjectDidDeallocateNotification object:nil];
     }
     return self;
+}
+
+- (void)finalize {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super finalize];
 }
 
 - (void)dealloc {
