@@ -4,7 +4,12 @@ Some demos showing various concepts relating to Objective-C and Cocoa.
 
 ## AutozeroingArray
 
-An `NSMutableArray` subclass that maintains auto-zeroing weak references to its items.  Should work on both iOS and Mac OS X, regardless of GC mode.
+Contains:
+
+1. An `NSMutableArray` subclass (`DDAutozeroingArray`) that maintains auto-zeroing weak references to its items.
+2. An `NSMutableArray` category that allows you to create a "pure" `NSMutableArray` that maintains auto-zeroing weak references to its items.  This is slightly less efficient than a `DDAutozeroingArray`.
+
+Both should work on both iOS and Mac OS X, regardless of GC mode.
 
 ## DDURLBuilder
 

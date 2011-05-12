@@ -152,3 +152,120 @@ static NSString *DDAutozeroingObjectDidDeallocateNotification = @"DDAutozeroingO
 }
 
 @end
+
+#pragma mark -
+#pragma mark NSMutableArray (DDAutozeroingArray)
+
+const void* DDAutozeroingArrayRetainCallback(CFAllocatorRef allocator, const void *value) {
+    id object = (id)value;
+    
+    id observer = objc_getAssociatedObject(object, &DDAutozeroingObserverKey);
+    if (observer == nil) {
+        observer = [[DDAutozeroingArrayDeallocationObserver alloc] initWithObject:object];
+        objc_setAssociatedObject(object, &DDAutozeroingObserverKey, observer, OBJC_ASSOCIATION_RETAIN);
+        [observer release];
+    }
+    
+    return value;
+}
+
+@implementation NSMutableArray (DDAutozeroingArray)
+
++ (NSAutozeroingMutableArray *) autozeroingArray {
+    return [[[self alloc] initAutozeroingArray] autorelease];
+}
+
++ (NSAutozeroingMutableArray *) autozeroingArrayWithArray:(NSArray *)array {
+    return [[[self alloc] initAutozeroingArrayWithArray:array] autorelease];
+}
+
++ (NSAutozeroingMutableArray *) autozeroingArrayWithObject:(id)object {
+    return [[[self alloc] initAutozeroingArrayWithObject:object] autorelease];
+}
+
++ (NSAutozeroingMutableArray *) autozeroingArrayWithObjects:(id)object, ... {
+    if (object == nil) {
+        return [self autozeroingArray];
+    }
+    
+    NSMutableArray *tmp = [[NSMutableArray alloc] init];
+    va_list args;
+    va_start(args, object);
+    while (object != nil) {
+        [tmp addObject:object];
+        object = va_arg(args, id);
+    }
+    va_end(args);
+    NSAutozeroingMutableArray *array = [self autozeroingArrayWithArray:tmp];
+    [tmp release];
+    
+    return array;
+}
+
++ (NSAutozeroingMutableArray *) autozeroingArrayWithObjects:(const id *)objects count:(NSUInteger)count {
+    return [[[self alloc] initAutozeroingArrayWithObjects:objects count:count] autorelease];
+}
+
+- (id)initAutozeroingArray {
+    return [self initAutozeroingArrayWithObjects:NULL count:0];
+}
+
+- (id)initAutozeroingArrayWithArray:(NSArray *)array {
+    id *objects = calloc(sizeof(id), [array count]);
+    [array getObjects:objects range:NSMakeRange(0, [array count])];
+    
+    self = [self initAutozeroingArrayWithObjects:objects count:[array count]];
+    free(objects);
+    return self;
+}
+
+- (id)initAutozeroingArrayWithObject:(id)object {
+    return [self initAutozeroingArrayWithObjects:&object count:1];
+}
+
+- (id)initAutozeroingArrayWithObjects:(id)object, ... {
+    if (object == nil) {
+        return [self initAutozeroingArray];
+    }
+    
+    NSMutableArray *tmp = [[NSMutableArray alloc] init];
+    va_list args;
+    va_start(args, object);
+    while (object != nil) {
+        [tmp addObject:object];
+        object = va_arg(args, id);
+    }
+    va_end(args);
+    self = [self initAutozeroingArrayWithArray:tmp];
+    [tmp release];
+    
+    return self;
+}
+
+// designated initializer for this category
+- (id)initAutozeroingArrayWithObjects:(const id *)objects count:(NSUInteger)count {
+    [self release];
+    
+    CFArrayCallBacks callbacks = kCFTypeArrayCallBacks;
+    callbacks.retain = &DDAutozeroingArrayRetainCallback;
+    callbacks.release = NULL;
+    
+    // the magic of Toll-Free Bridging
+    self = (NSAutozeroingMutableArray *)CFArrayCreateMutable(NULL, count, &callbacks);
+    
+    for (NSUInteger i = 0; i < count; ++i) {
+        [self addObject:objects[i]];
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_ddautozeroingarray_objectDeallocated:) name:DDAutozeroingObjectDidDeallocateNotification object:nil];
+    
+    return self;
+}
+
+- (void)_ddautozeroingarray_objectDeallocated:(NSNotification *)note {
+    NSValue *wrapper = [[note object] objectWrapper];
+    id pointer = [wrapper nonretainedObjectValue];
+    [self removeObject:pointer];
+}
+
+@end

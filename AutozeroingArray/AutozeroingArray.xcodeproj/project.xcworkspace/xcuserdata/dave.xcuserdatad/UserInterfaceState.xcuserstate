@@ -32,7 +32,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>197</integer>
+					<integer>198</integer>
 				</dict>
 			</array>
 		</dict>
@@ -79,7 +79,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>195</integer>
+					<integer>196</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -91,7 +91,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>196</integer>
+					<integer>197</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -362,7 +362,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>40</integer>
+					<integer>37</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -967,15 +967,15 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>186</integer>
+					<integer>187</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>194</integer>
+					<integer>195</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>21</integer>
+					<integer>50</integer>
 				</dict>
 			</array>
 		</dict>
@@ -1632,7 +1632,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>184</integer>
+					<integer>185</integer>
 				</dict>
 			</array>
 		</dict>
@@ -1706,19 +1706,19 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>57</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>57</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>180</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
+					<integer>57</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
 					<integer>181</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>182</integer>
 				</dict>
 			</array>
 		</dict>
@@ -1865,15 +1865,16 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>326875097.30066699</real>
-		<string>{52, 1172}</string>
-		<string>{260, 0}</string>
+		<real>326907579.00664997</real>
+		<string>{6831, 1539}</string>
+		<string>{7858, 0}</string>
+		<string>-initAutozeroingArrayWithObjects:count:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -1883,7 +1884,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>182</integer>
+				<integer>183</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/dave/Developer/Open%20Source/Git%20Projects/Demos/AutozeroingArray/AutozeroingArray/DDAutozeroingArray.m</string>
@@ -1906,11 +1907,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>185</integer>
+					<integer>186</integer>
 				</dict>
 			</array>
 		</dict>
-		<string>{{0, 0}, {1140, 417}}</string>
+		<string>{{0, 0}, {1140, 708}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1928,7 +1929,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>187</integer>
+					<integer>188</integer>
 				</dict>
 			</array>
 		</dict>
@@ -1942,11 +1943,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>188</integer>
+					<integer>189</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>191</integer>
+					<integer>192</integer>
 				</dict>
 			</array>
 		</dict>
@@ -1971,11 +1972,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>189</integer>
+					<integer>190</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>190</integer>
+					<integer>191</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2002,11 +2003,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>192</integer>
+					<integer>193</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>193</integer>
+					<integer>194</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2048,10 +2049,6 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>198</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>199</integer>
 				</dict>
 				<dict>
@@ -2086,6 +2083,10 @@
 					<key>CF$UID</key>
 					<integer>207</integer>
 				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>208</integer>
+				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
@@ -2095,7 +2096,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>208</integer>
+					<integer>209</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -2151,22 +2152,22 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>209</integer>
+					<integer>210</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>180</integer>
+					<integer>181</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>210</integer>
+					<integer>211</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>432</integer>
+					<integer>433</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2181,14 +2182,14 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>211</integer>
+					<integer>212</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>213</integer>
+					<integer>214</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2196,7 +2197,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -2206,7 +2207,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>212</integer>
+				<integer>213</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -2228,10 +2229,6 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>214</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>215</integer>
 				</dict>
 				<dict>
@@ -2246,20 +2243,20 @@
 					<key>CF$UID</key>
 					<integer>218</integer>
 				</dict>
-			</array>
-			<key>NS.objects</key>
-			<array>
 				<dict>
 					<key>CF$UID</key>
 					<integer>219</integer>
 				</dict>
+			</array>
+			<key>NS.objects</key>
+			<array>
 				<dict>
 					<key>CF$UID</key>
 					<integer>220</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>226</integer>
+					<integer>221</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -2267,7 +2264,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>431</integer>
+					<integer>228</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>432</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2294,7 +2295,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>221</integer>
+					<integer>222</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2308,11 +2309,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>222</integer>
+					<integer>223</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>224</integer>
+					<integer>225</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2341,7 +2342,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>223</integer>
+					<integer>224</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2371,7 +2372,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>225</integer>
+					<integer>226</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2387,7 +2388,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>228</integer>
+					<integer>229</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2395,22 +2396,22 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>430</integer>
+				<integer>431</integer>
 			</dict>
 			<key>documentURL</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>229</integer>
+				<integer>230</integer>
 			</dict>
 			<key>selection</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>231</integer>
+				<integer>232</integer>
 			</dict>
 			<key>timestamp</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>230</integer>
+				<integer>231</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/dave/Developer/Open%20Source/Git%20Projects/Demos/AutozeroingArray/AutozeroingArray.xcodeproj/</string>
@@ -2425,23 +2426,19 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>232</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>233</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>234</integer>
 				</dict>
-			</array>
-			<key>NS.objects</key>
-			<array>
 				<dict>
 					<key>CF$UID</key>
 					<integer>235</integer>
 				</dict>
+			</array>
+			<key>NS.objects</key>
+			<array>
 				<dict>
 					<key>CF$UID</key>
 					<integer>236</integer>
@@ -2449,6 +2446,10 @@
 				<dict>
 					<key>CF$UID</key>
 					<integer>237</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>238</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2467,7 +2468,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>238</integer>
+					<integer>239</integer>
 				</dict>
 			</array>
 		</dict>
@@ -2479,10 +2480,6 @@
 			</dict>
 			<key>NS.keys</key>
 			<array>
-				<dict>
-					<key>CF$UID</key>
-					<integer>239</integer>
-				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>240</integer>
@@ -2503,16 +2500,20 @@
 					<key>CF$UID</key>
 					<integer>244</integer>
 				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>245</integer>
+				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>245</integer>
+					<integer>246</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>428</integer>
+					<integer>429</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -2546,10 +2547,6 @@
 			</dict>
 			<key>NS.objects</key>
 			<array>
-				<dict>
-					<key>CF$UID</key>
-					<integer>246</integer>
-				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>247</integer>
@@ -3273,6 +3270,10 @@
 				<dict>
 					<key>CF$UID</key>
 					<integer>427</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>428</integer>
 				</dict>
 			</array>
 		</dict>
@@ -4924,7 +4925,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>429</integer>
+					<integer>430</integer>
 				</dict>
 			</array>
 		</dict>
@@ -4968,11 +4969,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>433</integer>
+					<integer>434</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>435</integer>
+					<integer>436</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -5007,7 +5008,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -5017,7 +5018,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>434</integer>
+				<integer>435</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -5033,7 +5034,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -5043,23 +5044,14 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>436</integer>
+				<integer>114</integer>
 			</dict>
 		</dict>
 		<dict>
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>115</integer>
-			</dict>
-			<key>NS.string</key>
-			<string>file://localhost/Users/dave/Developer/Open%20Source/Git%20Projects/Demos/AutozeroingArray/AutozeroingArray/DDAutozeroingArray.m</string>
-		</dict>
-		<dict>
-			<key>$class</key>
-			<dict>
-				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -5085,7 +5077,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -5152,9 +5144,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326875057.77917397</real>
-		<string>{0, 274}</string>
-		<string>{187, 0}</string>
+		<real>326907017.69448501</real>
+		<string>{28, 1058}</string>
+		<string>{0, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -5200,9 +5192,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326875097.29750597</real>
-		<string>{52, 1172}</string>
-		<string>{260, 0}</string>
+		<real>326907579.00187999</real>
+		<string>{6831, 1539}</string>
+		<string>{7858, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -5296,9 +5288,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>326875057.26639903</real>
-		<string>{205, 813}</string>
-		<string>{0, 0}</string>
+		<real>326907562.39356297</real>
+		<string>{38, 1492}</string>
+		<string>{1282, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -5652,7 +5644,7 @@
 				<integer>493</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>326875092.29727602</real>
+			<real>326907300.99489599</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -5663,7 +5655,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 11:38 PM</string>
+		<string>Today at 8:35 AM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -5713,7 +5705,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -5731,7 +5723,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -5744,12 +5736,12 @@
 				<integer>501</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/dave/Developer/Open%20Source/Git%20Projects/Demos/AutozeroingArray/AutozeroingArray/DDAutozeroingArray.h</string>
+		<string>file://localhost/Users/dave/Developer/Open%20Source/Git%20Projects/Demos/AutozeroingArray/AutozeroingArray/main.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -5762,12 +5754,12 @@
 				<integer>503</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/dave/Developer/Open%20Source/Git%20Projects/Demos/AutozeroingArray/AutozeroingArray/main.m</string>
+		<string>file://localhost/Users/dave/Developer/Open%20Source/Git%20Projects/Demos/AutozeroingArray/AutozeroingArray/DDAutozeroingArray.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -5785,7 +5777,7 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>183</integer>
+				<integer>184</integer>
 			</dict>
 			<key>NS.base</key>
 			<dict>
@@ -5795,7 +5787,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>229</integer>
+				<integer>230</integer>
 			</dict>
 		</dict>
 	</array>
