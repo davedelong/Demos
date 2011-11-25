@@ -19,6 +19,12 @@ Both should work on both iOS and Mac OS X, regardless of GC mode.
 
 Contains `DDDynamicStorageObject`, an `NSObject` subclass that dynamically generates getters and setters for properties declared as `@dynamic`, and uses an  `NSMutableDictionary` as the backing store.
 
+## JoinPoints
+
+A **really really really** dangerous project that shows how to inject code before, after, and during any method call.
+
+THIS IS A PROOF-OF-CONCEPT ONLY, and should **NOT** be used in any sort of production setting.
+
 ## Olympic Rings
 
 A simple project showing simple drawing with CoreGraphics and a simple auto-reversing animation.
