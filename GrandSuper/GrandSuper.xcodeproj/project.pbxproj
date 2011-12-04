@@ -1,0 +1,240 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		559CB8F6148ADA0E00005B5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559CB8F5148ADA0E00005B5A /* Foundation.framework */; };
+		559CB8F9148ADA0E00005B5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 559CB8F8148ADA0E00005B5A /* main.m */; };
+		559CB8FD148ADA0E00005B5A /* GrandSuper.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 559CB8FC148ADA0E00005B5A /* GrandSuper.1 */; };
+		559CB905148ADA3200005B5A /* DDSuperProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 559CB904148ADA3200005B5A /* DDSuperProxy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		559CB8EF148ADA0E00005B5A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				559CB8FD148ADA0E00005B5A /* GrandSuper.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		559CB8F1148ADA0E00005B5A /* GrandSuper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GrandSuper; sourceTree = BUILT_PRODUCTS_DIR; };
+		559CB8F5148ADA0E00005B5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		559CB8F8148ADA0E00005B5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		559CB8FB148ADA0E00005B5A /* GrandSuper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GrandSuper-Prefix.pch"; sourceTree = "<group>"; };
+		559CB8FC148ADA0E00005B5A /* GrandSuper.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = GrandSuper.1; sourceTree = "<group>"; };
+		559CB903148ADA3200005B5A /* DDSuperProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSuperProxy.h; sourceTree = "<group>"; };
+		559CB904148ADA3200005B5A /* DDSuperProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSuperProxy.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		559CB8EE148ADA0E00005B5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559CB8F6148ADA0E00005B5A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		559CB8E6148ADA0E00005B5A = {
+			isa = PBXGroup;
+			children = (
+				559CB8F7148ADA0E00005B5A /* GrandSuper */,
+				559CB8F4148ADA0E00005B5A /* Frameworks */,
+				559CB8F2148ADA0E00005B5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		559CB8F2148ADA0E00005B5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				559CB8F1148ADA0E00005B5A /* GrandSuper */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		559CB8F4148ADA0E00005B5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				559CB8F5148ADA0E00005B5A /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		559CB8F7148ADA0E00005B5A /* GrandSuper */ = {
+			isa = PBXGroup;
+			children = (
+				559CB8F8148ADA0E00005B5A /* main.m */,
+				559CB903148ADA3200005B5A /* DDSuperProxy.h */,
+				559CB904148ADA3200005B5A /* DDSuperProxy.m */,
+				559CB8FC148ADA0E00005B5A /* GrandSuper.1 */,
+				559CB8FA148ADA0E00005B5A /* Supporting Files */,
+			);
+			path = GrandSuper;
+			sourceTree = "<group>";
+		};
+		559CB8FA148ADA0E00005B5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				559CB8FB148ADA0E00005B5A /* GrandSuper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		559CB8F0148ADA0E00005B5A /* GrandSuper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559CB900148ADA0E00005B5A /* Build configuration list for PBXNativeTarget "GrandSuper" */;
+			buildPhases = (
+				559CB8ED148ADA0E00005B5A /* Sources */,
+				559CB8EE148ADA0E00005B5A /* Frameworks */,
+				559CB8EF148ADA0E00005B5A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrandSuper;
+			productName = GrandSuper;
+			productReference = 559CB8F1148ADA0E00005B5A /* GrandSuper */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		559CB8E8148ADA0E00005B5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 559CB8EB148ADA0E00005B5A /* Build configuration list for PBXProject "GrandSuper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 559CB8E6148ADA0E00005B5A;
+			productRefGroup = 559CB8F2148ADA0E00005B5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				559CB8F0148ADA0E00005B5A /* GrandSuper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		559CB8ED148ADA0E00005B5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559CB8F9148ADA0E00005B5A /* main.m in Sources */,
+				559CB905148ADA3200005B5A /* DDSuperProxy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		559CB8FE148ADA0E00005B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		559CB8FF148ADA0E00005B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		559CB901148ADA0E00005B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrandSuper/GrandSuper-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		559CB902148ADA0E00005B5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrandSuper/GrandSuper-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		559CB8EB148ADA0E00005B5A /* Build configuration list for PBXProject "GrandSuper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559CB8FE148ADA0E00005B5A /* Debug */,
+				559CB8FF148ADA0E00005B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		559CB900148ADA0E00005B5A /* Build configuration list for PBXNativeTarget "GrandSuper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559CB901148ADA0E00005B5A /* Debug */,
+				559CB902148ADA0E00005B5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 559CB8E8148ADA0E00005B5A /* Project object */;
+}
