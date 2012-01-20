@@ -19,6 +19,10 @@ Both should work on both iOS and Mac OS X, regardless of GC mode.
 
 Contains `DDDynamicStorageObject`, an `NSObject` subclass that dynamically generates getters and setters for properties declared as `@dynamic`, and uses an  `NSMutableDictionary` as the backing store.
 
+## FaultingArray
+
+An `NSArray` subclass that only loads the objects in the array when something else needs them.
+
 ## GrandSuper
 
 A project showing how to invoke "grandsuper" (super's super).  Uses a private method on `NSInvocation`, so you probably shouldn't use this in a production setting.
