@@ -11,6 +11,7 @@
 		5547274B147EE7A500533F18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5547274A147EE7A500533F18 /* main.m */; };
 		5547274F147EE7A500533F18 /* JoinPoints.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5547274E147EE7A500533F18 /* JoinPoints.1 */; };
 		55472757147EE7BC00533F18 /* NSObject+JoinPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 55472756147EE7BC00533F18 /* NSObject+JoinPoints.m */; };
+		B11F560714E574A300B1718F /* ForwardingClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B11F560614E574A300B1718F /* ForwardingClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		5547274E147EE7A500533F18 /* JoinPoints.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = JoinPoints.1; sourceTree = "<group>"; };
 		55472755147EE7BC00533F18 /* NSObject+JoinPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JoinPoints.h"; sourceTree = "<group>"; };
 		55472756147EE7BC00533F18 /* NSObject+JoinPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JoinPoints.m"; sourceTree = "<group>"; };
+		B11F560514E574A300B1718F /* ForwardingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForwardingClass.h; sourceTree = "<group>"; };
+		B11F560614E574A300B1718F /* ForwardingClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForwardingClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 				5547274A147EE7A500533F18 /* main.m */,
 				55472755147EE7BC00533F18 /* NSObject+JoinPoints.h */,
 				55472756147EE7BC00533F18 /* NSObject+JoinPoints.m */,
+				B11F560514E574A300B1718F /* ForwardingClass.h */,
+				B11F560614E574A300B1718F /* ForwardingClass.m */,
 				5547274E147EE7A500533F18 /* JoinPoints.1 */,
 				5547274C147EE7A500533F18 /* Supporting Files */,
 			);
@@ -119,7 +124,7 @@
 		5547273A147EE7A400533F18 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 5547273D147EE7A400533F18 /* Build configuration list for PBXProject "JoinPoints" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -145,6 +150,7 @@
 			files = (
 				5547274B147EE7A500533F18 /* main.m in Sources */,
 				55472757147EE7BC00533F18 /* NSObject+JoinPoints.m in Sources */,
+				B11F560714E574A300B1718F /* ForwardingClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +239,7 @@
 				55472754147EE7A500533F18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

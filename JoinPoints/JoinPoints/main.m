@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSObject+JoinPoints.h"
+#import "ForwardingClass.h"
 
 typedef struct {
     NSInteger a;
@@ -103,6 +104,28 @@ int main (int argc, const char * argv[])
         
         [b release];
         
+        NSLog(@"==================");
+        [ForwardingClass before:@selector(aMethod) do:^{
+            NSLog(@"before aMethod");
+        }];
+
+        [ForwardingClass during:@selector(aMethod) do:^{
+            NSLog(@"during aMethod");
+        }];
+
+        [ForwardingClass after:@selector(aMethod) do:^{
+            NSLog(@"after aMethod");
+        }];
+
+        // Attempting to shim a method a class does not implement does nothing
+        [ForwardingClass before:@selector(voodooMethod) do:^{
+            NSLog(@"before voodooMethod");
+        }];
+        
+        ForwardingClass *fc = [ForwardingClass new];
+        [fc aMethod];
+        
+        [fc performSelector:@selector(voodooMethod)];
     }
     return 0;
 }

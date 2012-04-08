@@ -16,9 +16,60 @@ static char JP_AfterBlocks;
 
 static NSArray* JP_GetBlocks(id self, SEL _cmd, const void *key);
 
+typedef struct {
+    Class klass;
+    IMP forwardInvocationImp;
+    IMP methodSignatureForSelectorImp;
+} ClassOriginalForwardingInfo;
+typedef ClassOriginalForwardingInfo *ClassOriginalForwardingInfoPtr;
+
+static ClassOriginalForwardingInfoPtr originalClassForwardingInfo = NULL;
+static int originalClassForwardingInfoIndex = 0;
+static IMP originalForwardInvocationImp = NULL;
+
 // given a selector, this returns a new selector that corresponds to the "shadow" method
 static SEL JP_SelectorMunge(SEL selector) {
     return NSSelectorFromString([NSString stringWithFormat:@"JP_%@", NSStringFromSelector(selector)]);
+}
+
+// Returns the appropriate signature for a method from a class that's over-ridden forwardInvocation: and methodSignatureForSelector:
+static NSMethodSignature *nsobject_methodSignatureForSelector(id self, SEL _cmd, SEL selector) {
+    int x;
+    NSMethodSignature *signature = nil;
+    SEL mungedSelector = JP_SelectorMunge(selector);
+    Class thisClass = object_getClass(self);
+    IMP originalMethodSignatureForSelectorImp = NULL;
+    
+    for( x=0; x<=originalClassForwardingInfoIndex; x++ ) {
+        ClassOriginalForwardingInfo info = originalClassForwardingInfo[x];
+        if( info.klass == thisClass ) {
+            if( info.methodSignatureForSelectorImp != NULL ) {
+                originalMethodSignatureForSelectorImp = info.methodSignatureForSelectorImp;
+            }
+            
+            if( class_getInstanceMethod(thisClass, mungedSelector) || class_getClassMethod(thisClass, mungedSelector) ) {
+                signature = [thisClass instanceMethodSignatureForSelector:mungedSelector];
+            }
+        }
+        
+        if( signature ) {
+            break;
+        }
+    }
+
+    // If we found no munged selector, see if the class has an implemetation for this method and get a signature from that. If we can't find an implementation, call the original implementation and return that answer.
+    if( !signature ) {
+        if( class_getInstanceMethod(thisClass, selector) || class_getClassMethod(thisClass, selector) ) {
+            signature = [thisClass instanceMethodSignatureForSelector:selector];
+        }
+        
+        if( !signature ) {
+            NSAssert( originalMethodSignatureForSelectorImp != NULL, @"originalMethodSignatureForSelectorImp is NULL... that's bad");
+            signature = originalMethodSignatureForSelectorImp(self, _cmd, selector);
+        }
+    }
+    
+    return( signature );
 }
 
 // this is the heart of the code. here is where we invoke the blocks and run the original method
@@ -27,8 +78,27 @@ static void nsobject_forwardInvocation(id self, SEL _cmd, NSInvocation *invocati
     // TODO: WHAT DO WE DO WITH IT??
     //    NSLog(@"we found this invocation: %@", invocation);
     
+    // It is entirely possible to get here legimitately (e.g., a class depends on forwardInvocation: to communicate to a private class). If we can't find a munged selector, we need to invoke the original forwardInvocation: and send the message on its way.
     SEL selector = [invocation selector];
-    
+    SEL mungedSelector = JP_SelectorMunge(selector);
+    if( !class_getInstanceMethod(object_getClass(self), mungedSelector) && !class_getClassMethod(object_getClass(self), mungedSelector) ) {
+        if( originalClassForwardingInfo != NULL ) {
+            int x;
+            for( x=0; x<=originalClassForwardingInfoIndex; x++ ) {
+                ClassOriginalForwardingInfo info = originalClassForwardingInfo[x];
+                if( info.klass == object_getClass(self) ) {
+                    // Forwarding to class original forwardInvocation:
+                    info.forwardInvocationImp(self, _cmd, invocation);
+                    return;
+                }
+            }
+        }
+        
+        // forwarding to NSObject original forwardInvocation:
+        originalForwardInvocationImp(self, _cmd, invocation);
+        return;
+    }
+
     NSArray *before = JP_GetBlocks(self, selector, &JP_BeforeBlocks);
     NSArray *during = JP_GetBlocks(self, selector, &JP_DuringBlocks);
     NSArray *after = JP_GetBlocks(self, selector, &JP_AfterBlocks);
@@ -39,7 +109,7 @@ static void nsobject_forwardInvocation(id self, SEL _cmd, NSInvocation *invocati
     }
     
     //alter the selector to point to the shadow methods
-    [invocation setSelector:JP_SelectorMunge(selector)];
+    [invocation setSelector:mungedSelector];
     
     dispatch_group_t group = dispatch_group_create();
     for (id block in during) {
@@ -66,7 +136,7 @@ static void JP_InstallNSObjectForwardInvocationReplacement(void) {
         if (!nsobject) { return; }
         
         SEL forwardInvocation = @selector(forwardInvocation:);
-        class_replaceMethod(nsobject, forwardInvocation, (IMP)nsobject_forwardInvocation, "v@:@");
+        originalForwardInvocationImp = class_replaceMethod(nsobject, forwardInvocation, (IMP)nsobject_forwardInvocation, "v@:@");
     });
 }
 
@@ -128,9 +198,36 @@ static void JP_Shadow(Class self, SEL _cmd) {
     
     SEL shadowedSel = JP_SelectorMunge(_cmd);
     Method m = class_getInstanceMethod(self, _cmd);
-    if (method_getImplementation(m) != forwardingIMP) {
+    // If the class does not implement the method, we shouldn't add an implementation
+    if (m && method_getImplementation(m) != forwardingIMP) {
         class_addMethod(self, shadowedSel, method_getImplementation(m), method_getTypeEncoding(m));
         method_setImplementation(m, forwardingIMP);
+    }
+    
+    SEL forwardInvocation = @selector(forwardInvocation:);
+    if( [self instancesRespondToSelector:forwardInvocation] && 
+       (class_getMethodImplementation(self, forwardInvocation) != (IMP)nsobject_forwardInvocation) ) {
+        
+        IMP classOriginalForwardInvocationImp = class_replaceMethod(self, forwardInvocation, (IMP)nsobject_forwardInvocation, "v@:@");
+        
+        ClassOriginalForwardingInfo info;
+        info.klass = self;
+        info.forwardInvocationImp = classOriginalForwardInvocationImp;
+        
+        SEL methodSignatureForSelector = @selector(methodSignatureForSelector:);
+        if( [self instancesRespondToSelector:methodSignatureForSelector] ) {
+            info.methodSignatureForSelectorImp = class_replaceMethod(self, methodSignatureForSelector, (IMP)nsobject_methodSignatureForSelector, "@@::");
+        }
+        
+        if( originalClassForwardingInfo == NULL ) {
+            originalClassForwardingInfo = malloc( sizeof(ClassOriginalForwardingInfo) );
+            memcpy(originalClassForwardingInfo, &info, sizeof(ClassOriginalForwardingInfo));
+        }
+        else {
+            originalClassForwardingInfoIndex++;
+            originalClassForwardingInfo = realloc(originalClassForwardingInfo, originalClassForwardingInfoIndex+1);
+            memcpy(&originalClassForwardingInfo[originalClassForwardingInfoIndex], &info, sizeof(ClassOriginalForwardingInfo));
+        }
     }
     
     JP_Shadow(class_getSuperclass(self), _cmd);
