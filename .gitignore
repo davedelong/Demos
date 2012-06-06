@@ -1,3 +1,9 @@
+
+*xcworkspace*
+*xcuserdata*
+._*
+.svn
+
 **/build
 **/**/*.pbxuser
 **/**/*.perspectivev3

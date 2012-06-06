@@ -11,8 +11,8 @@
 NSString *ddurlbuilder_percentEncode(NSString *string) {
     NSMutableString * output = [NSMutableString string];
     const unsigned char * source = (const unsigned char *)[string UTF8String];
-    int sourceLen = strlen((const char *)source);
-    for (int i = 0; i < sourceLen; ++i) {
+    size_t sourceLen = strlen((const char *)source);
+    for (size_t i = 0; i < sourceLen; ++i) {
         const unsigned char thisChar = source[i];
         if (thisChar == ' '){
             [output appendString:@"+"];
